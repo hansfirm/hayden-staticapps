@@ -1,17 +1,23 @@
 {% extends '_layouts/base.njk' %}
+{% block page_title %}{{entry.title}}{% endblock %}
+{% block page_description %}{{entry.title}}post from {{entry.date}}.{% endblock %}
 
 {% block content %}
 <article class="container">
   <div class="row">
     <div class="col-sm-4">
       {% block info %}
-        <img src="https://placekitten.com/420/320" alt="" class="img-fluid">
+        <img src="img/pirate.jpg" alt="pirate character" class="img-fluid">
+        <p class="byline">By Crit McGillicutty<br>
+        <span>Island Breeze Tribune</span></p>
       {% endblock %}
     </div>
     <div class="col-sm-8">
+      {{entry.src}}
+      <h1>{{ entry.title }}</h1>
+      <h5>Captain's log: {{entry.date}}</h5>
       {% block story %}
-        <h1>Entry headline goes here</h1>
-        <p>Entry text goes here</p>
+    
       {% endblock %}
     </div>
   </div>
